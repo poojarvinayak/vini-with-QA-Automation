@@ -1,0 +1,92 @@
+# Web Automation Framework Configuration
+
+# Application Environment Settings
+app:
+  environment: qa  # Options: local, qa, staging, production
+  baseUrl: "https://www.demoblaze.com/"
+  implicitWaitTime: 10
+  explicitWaitTime: 15
+  pageLoadTimeout: 30
+
+# Browser Configuration
+browser:
+  name: chrome  # Options: chrome, firefox, edge, safari
+  headless: false  # Set to false for headed mode (visual test execution)
+  incognito: false
+  downloadPath: "./downloads"
+
+  # Chrome specific options
+  chrome:
+    startMaximized: true
+    disableNotifications: true
+    disablePopups: true
+    downloadPrompt: false
+
+  # Firefox specific options
+  firefox:
+    privateMode: false
+
+  # Edge specific options
+  edge:
+    startMaximized: true
+
+# Screenshot and Report Settings
+screenshots:
+  enabled: true
+  path: "./screenshots"
+  onFailure: true
+  onSuccess: false
+
+# Logging Configuration
+logging:
+  level: INFO  # Options: DEBUG, INFO, WARN, ERROR
+
+# Test Execution Settings
+execution:
+  retryFailedTests: true
+  retryCount: 1
+  parallel: false
+  threadCount: 1
+
+# Allure Report Settings
+allure:
+  enabled: true
+  resultsPath: "./allure-results"
+  reportPath: "./allure-report"
+
+# Data File Paths
+dataFiles:
+  excelPath: "./src/test/resources/testdata/excel/"
+  yamlPath: "./src/test/resources/testdata/yaml/"
+  jsonPath: "./src/test/resources/testdata/json/"
+
+# DemoBlaze Test Configuration
+demoblaze:
+  testUser:
+    username: "testuser123"
+    password: "testpass123"
+  products:
+    - "Samsung galaxy s6"
+    - "Nokia lumia 1520"
+    - "Nexus 6"
+    - "Samsung galaxy s7"
+    - "Iphone 6 32gb"
+    - "Sony xperia z5"
+    - "HTC One M9"
+    - "Sony vaio i5"
+    - "Sony vaio i7"
+
+# Notification Settings (Optional - for sending reports)
+notifications:
+  enabled: false
+  email:
+    enabled: false
+    smtpHost: "smtp.gmail.com"
+    smtpPort: 587
+    username: "${EMAIL_USERNAME}"
+    password: "${EMAIL_PASSWORD}"
+    recipients: ["qa-team@company.com"]
+  slack:
+    enabled: false
+    webhookUrl: "${SLACK_WEBHOOK_URL}"
+    channel: "#qa-notifications"

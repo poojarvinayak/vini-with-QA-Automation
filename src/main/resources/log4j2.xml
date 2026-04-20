@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_PATH">./logs</property>
+    <property name="LOG_PATTERN">%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</property>
+
+    <!-- Console Appender -->
+    <appender name="CONSOLE" class="org.apache.logging.log4j.core.appender.ConsoleAppender">
+        <layout class="org.apache.logging.log4j.core.layout.PatternLayout">
+            <pattern>${LOG_PATTERN}</pattern>
+        </layout>
+    </appender>
+
+    <!-- File Appender -->
+    <appender name="FILE" class="org.apache.logging.log4j.core.appender.RollingFileAppender">
+        <fileName>${LOG_PATH}/automation.log</fileName>
+        <filePattern>${LOG_PATH}/automation-%d{yyyy-MM-dd}-%i.log</filePattern>
+        <layout class="org.apache.logging.log4j.core.layout.PatternLayout">
+            <pattern>${LOG_PATTERN}</pattern>
+        </layout>
+        <policies>
+            <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            <SizeBasedTriggeringPolicy size="10MB"/>
+        </policies>
+        <DefaultRolloverStrategy max="10"/>
+    </appender>
+
+    <!-- Root Logger -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <!-- Framework Loggers -->
+    <logger name="org.openqa.selenium" level="WARN"/>
+    <logger name="org.apache.http" level="WARN"/>
+    <logger name="com.automationframework" level="DEBUG"/>
+
+</configuration>
+

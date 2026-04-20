@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Your Company Automation Test Suite" verbose="2" parallel="methods" thread-count="3">
+
+    <!-- TestNG Listeners (inherited from framework) -->
+    <listeners>
+        <listener class-name="org.automationframework.listeners.TestListener"/>
+    </listeners>
+
+    <!-- Test Definitions -->
+    <test name="Smoke_Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.yourcompany.tests.LoginTests"/>
+            <!-- Add more test classes here -->
+        </classes>
+    </test>
+
+    <test name="Regression_Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.yourcompany.tests.LoginTests"/>
+            <!-- Add more test classes here -->
+        </classes>
+    </test>
+
+    <test name="All_Tests" preserve-order="true">
+        <classes>
+            <class name="com.yourcompany.tests.LoginTests"/>
+            <!-- Add all your test classes here -->
+        </classes>
+    </test>
+
+    <!-- Parameter Examples -->
+    <!--
+    <parameter name="browser" value="chrome"/>
+    <parameter name="environment" value="qa"/>
+    <parameter name="headless" value="false"/>
+    -->
+
+</suite>

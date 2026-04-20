@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="DemoBlaze_Test_Suite" verbose="2" parallel="methods" thread-count="3">
+
+    <!-- TestNG Listeners -->
+    <listeners>
+        <listener class-name="org.automationframework.listeners.TestListener"/>
+    </listeners>
+
+    <!-- Test Definitions -->
+    <test name="Smoke_Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.demoblaze.tests.LoginTest"/>
+            <class name="com.demoblaze.tests.AddToCartTest"/>
+        </classes>
+    </test>
+
+    <test name="Regression_Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.demoblaze.tests.LoginTest"/>
+            <class name="com.demoblaze.tests.AddToCartTest"/>
+        </classes>
+    </test>
+
+    <test name="All_DemoBlaze_Tests" preserve-order="true">
+        <classes>
+            <class name="com.demoblaze.tests.LoginTest"/>
+            <class name="com.demoblaze.tests.AddToCartTest"/>
+        </classes>
+    </test>
+
+    <!-- Parameter Examples -->
+    <!--
+    <parameter name="browser" value="chrome"/>
+    <parameter name="environment" value="qa"/>
+    <parameter name="headless" value="false"/>
+    -->
+
+</suite>
