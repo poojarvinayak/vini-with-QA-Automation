@@ -1,0 +1,97 @@
+{
+  "api_tests": [
+    {
+      "test_case": "get_user_profile",
+      "method": "GET",
+      "endpoint": "/api/users/profile",
+      "headers": {
+        "Authorization": "Bearer {token}",
+        "Content-Type": "application/json"
+      },
+      "expected_status_code": 200,
+      "expected_response_keys": ["id", "name", "email", "profile"],
+      "description": "Get user profile information"
+    },
+    {
+      "test_case": "create_user",
+      "method": "POST",
+      "endpoint": "/api/users",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "request_body": {
+        "name": "Test User",
+        "email": "test@example.com",
+        "password": "TestPass123"
+      },
+      "expected_status_code": 201,
+      "expected_response_keys": ["id", "name", "email", "created_at"],
+      "description": "Create a new user"
+    },
+    {
+      "test_case": "update_user",
+      "method": "PUT",
+      "endpoint": "/api/users/{user_id}",
+      "headers": {
+        "Authorization": "Bearer {token}",
+        "Content-Type": "application/json"
+      },
+      "request_body": {
+        "name": "Updated Test User",
+        "email": "updated@example.com"
+      },
+      "expected_status_code": 200,
+      "expected_response_keys": ["id", "name", "email", "updated_at"],
+      "description": "Update user information"
+    },
+    {
+      "test_case": "delete_user",
+      "method": "DELETE",
+      "endpoint": "/api/users/{user_id}",
+      "headers": {
+        "Authorization": "Bearer {token}"
+      },
+      "expected_status_code": 204,
+      "description": "Delete a user"
+    }
+  ],
+  "performance_tests": [
+    {
+      "test_case": "page_load_performance",
+      "url": "https://www.example.com",
+      "expected_load_time_ms": 3000,
+      "threshold_ms": 5000,
+      "description": "Check page load performance"
+    },
+    {
+      "test_case": "api_response_time",
+      "endpoint": "/api/health",
+      "method": "GET",
+      "expected_response_time_ms": 500,
+      "threshold_ms": 1000,
+      "description": "Check API response time"
+    }
+  ],
+  "database_tests": [
+    {
+      "test_case": "user_data_validation",
+      "query": "SELECT * FROM users WHERE email = ?",
+      "parameters": ["test@example.com"],
+      "expected_row_count": 1,
+      "expected_columns": ["id", "name", "email", "created_at"],
+      "description": "Validate user data in database"
+    }
+  ],
+  "configuration": {
+    "api_base_url": "https://api.example.com",
+    "timeout_ms": 10000,
+    "retry_count": 3,
+    "database": {
+      "host": "localhost",
+      "port": 5432,
+      "database_name": "test_db",
+      "username": "test_user",
+      "password": "test_password"
+    }
+  }
+}

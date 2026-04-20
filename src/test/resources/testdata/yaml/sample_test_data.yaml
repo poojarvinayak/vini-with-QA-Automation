@@ -1,0 +1,128 @@
+# Sample Test Data for Login Tests
+login_tests:
+  - test_case: "valid_login"
+    username: "testuser@example.com"
+    password: "TestPassword123"
+    expected_result: "success"
+    description: "Valid login with correct credentials"
+
+  - test_case: "invalid_username"
+    username: "invalid@example.com"
+    password: "TestPassword123"
+    expected_result: "failure"
+    error_message: "Invalid username or password"
+    description: "Login with invalid username"
+
+  - test_case: "invalid_password"
+    username: "testuser@example.com"
+    password: "WrongPassword"
+    expected_result: "failure"
+    error_message: "Invalid username or password"
+    description: "Login with invalid password"
+
+  - test_case: "empty_credentials"
+    username: ""
+    password: ""
+    expected_result: "failure"
+    error_message: "Username and password are required"
+    description: "Login with empty credentials"
+
+# Sample Test Data for User Registration
+registration_tests:
+  - test_case: "valid_registration"
+    first_name: "John"
+    last_name: "Doe"
+    email: "john.doe@example.com"
+    password: "SecurePass123"
+    confirm_password: "SecurePass123"
+    phone: "+1234567890"
+    expected_result: "success"
+    description: "Valid user registration"
+
+  - test_case: "duplicate_email"
+    first_name: "Jane"
+    last_name: "Smith"
+    email: "testuser@example.com"
+    password: "SecurePass123"
+    confirm_password: "SecurePass123"
+    phone: "+1234567890"
+    expected_result: "failure"
+    error_message: "Email already exists"
+    description: "Registration with duplicate email"
+
+# Sample Test Data for Search Functionality
+search_tests:
+  - test_case: "valid_search"
+    search_term: "selenium"
+    expected_results_count: 10
+    expected_result: "success"
+    description: "Search with valid term"
+
+  - test_case: "empty_search"
+    search_term: ""
+    expected_results_count: 0
+    expected_result: "success"
+    description: "Search with empty term"
+
+  - test_case: "special_characters_search"
+    search_term: "@#$%^&*()"
+    expected_results_count: 0
+    expected_result: "success"
+    description: "Search with special characters"
+
+# Sample Test Data for Form Validation
+form_validation_tests:
+  - test_case: "valid_form_data"
+    name: "Test User"
+    email: "test@example.com"
+    age: 25
+    phone: "+1234567890"
+    message: "This is a test message"
+    expected_result: "success"
+    description: "Valid form submission"
+
+  - test_case: "invalid_email"
+    name: "Test User"
+    email: "invalid-email"
+    age: 25
+    phone: "+1234567890"
+    message: "This is a test message"
+    expected_result: "failure"
+    error_message: "Invalid email format"
+    description: "Form submission with invalid email"
+
+  - test_case: "missing_required_fields"
+    name: ""
+    email: ""
+    age: null
+    phone: ""
+    message: ""
+    expected_result: "failure"
+    error_message: "Required fields are missing"
+    description: "Form submission with missing required fields"
+
+# Environment-specific test data
+environments:
+  qa:
+    base_url: "https://qa.example.com"
+    api_base_url: "https://api-qa.example.com"
+    database:
+      host: "qa-db.example.com"
+      port: 5432
+      name: "qa_database"
+
+  staging:
+    base_url: "https://staging.example.com"
+    api_base_url: "https://api-staging.example.com"
+    database:
+      host: "staging-db.example.com"
+      port: 5432
+      name: "staging_database"
+
+  production:
+    base_url: "https://www.example.com"
+    api_base_url: "https://api.example.com"
+    database:
+      host: "prod-db.example.com"
+      port: 5432
+      name: "production_database"
