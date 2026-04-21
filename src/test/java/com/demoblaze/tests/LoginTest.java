@@ -1,6 +1,6 @@
 package com.demoblaze.tests;
 
-import org.automationframework.base.BaseTest;
+import com.vinayakqa.automationframework.base.BaseTest;
 import com.demoblaze.pages.HomePage;
 import com.demoblaze.pages.LoginPage;
 import io.qameta.allure.*;

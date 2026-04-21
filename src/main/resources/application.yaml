@@ -85,7 +85,7 @@ notifications:
     smtpPort: 587
     username: "${EMAIL_USERNAME}"
     password: "${EMAIL_PASSWORD}"
-    recipients: ["qa-team@company.com"]
+    recipients: ["qa-team@VinayakQA.com"]
   slack:
     enabled: false
     webhookUrl: "${SLACK_WEBHOOK_URL}"

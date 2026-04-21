@@ -3,7 +3,7 @@
 
     <!-- TestNG Listeners -->
     <listeners>
-        <listener class-name="org.automationframework.listeners.TestListener"/>
+        <listener class-name="com.vinayakqa.automationframework.listeners.TestListener"/>
     </listeners>
 
     <!-- Test Definitions -->

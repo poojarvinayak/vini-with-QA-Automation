@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Your Company Automation Test Suite" verbose="2" parallel="methods" thread-count="3">
+<suite name="VinayakQA Automation Test Suite" verbose="2" parallel="methods" thread-count="3">
 
     <!-- TestNG Listeners (inherited from framework) -->
     <listeners>
@@ -14,7 +14,7 @@
             </run>
         </groups>
         <classes>
-            <class name="com.yourcompany.tests.LoginTests"/>
+            <class name="com.vinayakqa.tests.LoginTests"/>
             <!-- Add more test classes here -->
         </classes>
     </test>
@@ -26,14 +26,14 @@
             </run>
         </groups>
         <classes>
-            <class name="com.yourcompany.tests.LoginTests"/>
+            <class name="com.vinayakqa.tests.LoginTests"/>
             <!-- Add more test classes here -->
         </classes>
     </test>
 
     <test name="All_Tests" preserve-order="true">
         <classes>
-            <class name="com.yourcompany.tests.LoginTests"/>
+            <class name="com.vinayakqa.tests.LoginTests"/>
             <!-- Add all your test classes here -->
         </classes>
     </test>
