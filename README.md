@@ -2,7 +2,7 @@
 
 A comprehensive, industry-standard Selenium Web Automation Framework built with Java, TestNG, and supporting data-driven testing with YAML and Excel files. **Designed for JAR distribution** - build once, share with your team, and use across multiple projects.
 
-## 🎯 Framework Purpose
+## Framework Purpose
 
 This framework is designed to be:
 - **Built as a JAR** and shared with QA team members
@@ -10,7 +10,7 @@ This framework is designed to be:
 - **Extended by users** through inheritance (BaseTest, BasePage)
 - **Configurable** for different applications and environments
 
-## 📦 Distribution Model
+## Distribution Model
 
 ```
 Framework Team (You)
@@ -24,13 +24,13 @@ Their Automation Projects
 Their Test Implementations
 ```
 
-## 🚀 Quick Start for Framework Users
+## Quick Start for Framework Users
 
 ### 1. Add Framework Dependency
 
 ```xml
 <dependency>
-    <groupId>com.automation.framework</groupId>
+    <groupId>com.vinayakqa.automationframework</groupId>
     <artifactId>selenium-automation-framework</artifactId>
     <version>1.0.0</version>
 </dependency>
@@ -57,12 +57,12 @@ mvn clean test
 mvn allure:serve  # View reports
 ```
 
-## 🏗️ Framework Architecture
+## Framework Architecture
 
 ### Core Components (Included in JAR)
 
 ```
-com.automation.framework/
+com.vinayakqa.automationframework/
 ├── base/                    # Base classes to extend
 │   ├── BaseTest.class       # Extend for test classes
 │   └── BasePage.class       # Extend for page objects
@@ -85,16 +85,16 @@ com.automation.framework/
 
 ```
 your-automation-project/
-├── src/main/java/com/yourcompany/
+├── src/main/java/com/vinayakqa/
 │   ├── pages/              # Your page objects (extend BasePage)
 │   └── utils/              # Your custom utilities
-├── src/test/java/com/yourcompany/tests/
+├── src/test/java/com/vinayakqa/tests/
 │   └── *Tests.java         # Your test classes (extend BaseTest)
 └── src/main/resources/
     └── application.yaml    # Your configuration
 ```
 
-## ⚙️ Building the Framework JAR
+## Building the Framework JAR
 
 ### Prerequisites
 - Java 17+
@@ -128,9 +128,9 @@ After building, you'll get:
 - `selenium-automation-framework-1.0.0-sources.jar` (source JAR)
 - `selenium-automation-framework-1.0.0-javadoc.jar` (documentation JAR)
 
-## 📖 Framework Features
+## Framework Features
 
-### ✅ Included Features
+### Included Features
 
 - **Page Object Model (POM)**: Extend `BasePage` for your pages
 - **Data-Driven Testing**: YAML and Excel support
@@ -143,7 +143,7 @@ After building, you'll get:
 - **Logging**: SLF4J with Log4j2
 - **TestNG Integration**: Full TestNG support
 
-### 🔧 Configuration
+### Configuration
 
 Create `application.yaml` in your project:
 
@@ -161,7 +161,7 @@ browser:
 # ... more configurations
 ```
 
-### 📊 Data-Driven Testing
+### Data-Driven Testing
 
 **YAML Data:**
 ```java
@@ -179,7 +179,7 @@ public void testWithExcel(String username, String password) {
 }
 ```
 
-## 📋 Usage Examples
+## Usage Examples
 
 ### Creating Page Objects
 
@@ -225,14 +225,14 @@ public class LoginTests extends BaseTest {
 }
 ```
 
-## 🛠️ Advanced Usage
+## Advanced Usage
 
 ### Custom Utilities
 
 ```java
-package com.yourcompany.utils;
+package com.vinayakqa.utils;
 
-import com.automation.framework.utils.UIActions;
+import com.vinayakqa.automationframework.utils.UIActions;
 
 public class CustomUtils extends UIActions {
 
@@ -254,22 +254,21 @@ public class CustomListener extends TestListener {
 }
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 QA_Automation_Framework/
-├── src/main/java/org/automationframework/  # Framework source
-├── src/test/java/org/automationframework/  # Sample implementations
+├── src/main/java/com/vinayakqa/automationframework/  # Framework source
+├── src/test/java/com/vinayakqa/automationframework/  # Sample implementations
 ├── examples/                              # Example consumer project
 │   └── sample-consumer-project/
 ├── build-framework.bat                    # Windows build script
 ├── build-framework.sh                     # Linux/Mac build script
-├── FRAMEWORK_USAGE_GUIDE.md              # Detailed usage guide
 ├── pom.xml                               # Framework POM
 └── README.md
 ```
 
-## 🔄 CI/CD Integration
+## CI/CD Integration
 
 ### Jenkins Example
 
@@ -313,7 +312,7 @@ jobs:
       run: mvn clean test -Dheadless=true
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -333,20 +332,20 @@ jobs:
    - Screenshots saved automatically on failures
    - Check `screenshots/` directory
 
-## 🤝 Contributing to Framework
+## Contributing to Framework
 
 1. **Framework Code**: Modify classes in `src/main/java`
 2. **Sample Code**: Update examples in `src/test/java`
 3. **Documentation**: Update guides and READMEs
 4. **Build Scripts**: Test on multiple platforms
 
-## 📞 Support
+## Support
 
 - **Framework Issues**: Check this README and guides
-- **Usage Questions**: Refer to `FRAMEWORK_USAGE_GUIDE.md`
+- **Usage Questions**: Refer to examples in the project
 - **Examples**: See `examples/sample-consumer-project/`
 
-## 📋 Version History
+## Version History
 
 - **v1.0.0**: Initial JAR distribution release
   - Complete framework redesign for JAR distribution
@@ -357,9 +356,9 @@ jobs:
 
 ---
 
-## 🎉 Ready to Use!
+## Ready to Use!
 
-Your framework is now ready for JAR distribution. Build it, share with your team, and watch them create amazing automation projects! 🚀
+Your framework is now ready for JAR distribution. Build it, share with your team, and watch them create amazing automation projects!
 
 **Quick Commands:**
 ```bash

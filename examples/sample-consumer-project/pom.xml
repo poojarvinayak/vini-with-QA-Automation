@@ -6,13 +6,13 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yourcompany</groupId>
+    <groupId>com.vinayakqa</groupId>
     <artifactId>automation-tests</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Your Company Automation Tests</name>
-    <description>Automation test project using Selenium Automation Framework</description>
+    <name>VinayakQA Automation Tests</name>
+    <description>Automation test project using VinayakQA Selenium Automation Framework</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -27,7 +27,7 @@
 
         <!-- Selenium Automation Framework -->
         <dependency>
-            <groupId>com.automation.framework</groupId>
+            <groupId>com.vinayakqa.automationframework</groupId>
             <artifactId>selenium-automation-framework</artifactId>
             <version>${framework.version}</version>
         </dependency>

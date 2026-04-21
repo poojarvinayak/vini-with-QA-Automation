@@ -1,10 +1,10 @@
-# Application Configuration for Your Company Automation Tests
+# Application Configuration for VinayakQA Automation Tests
 # This configuration file shows how to configure the framework for your project
 
 # Application Environment Settings
 app:
   environment: qa  # Options: local, qa, staging, production
-  baseUrl: "https://your-app.com"  # Replace with your application URL
+  baseUrl: "https://vinayakqa-app.com"  # Replace with your application URL
   implicitWaitTime: 10
   explicitWaitTime: 15
   pageLoadTimeout: 30
@@ -64,15 +64,15 @@ dataFiles:
 # Test User Credentials (Use environment variables for sensitive data)
 testUsers:
   admin:
-    username: "admin@yourcompany.com"
+    username: "admin@vinayakqa.com"
     password: "${ADMIN_PASSWORD}"  # Use environment variables
   regular:
-    username: "user@yourcompany.com"
+    username: "user@vinayakqa.com"
     password: "${USER_PASSWORD}"
 
 # API Configuration (if using REST Assured)
 api:
-  baseUrl: "https://api.your-app.com"
+  baseUrl: "https://api.vinayakqa-app.com"
   timeout: 30000
   auth:
     type: "bearer"  # Options: bearer, basic, api-key
@@ -96,7 +96,7 @@ notifications:
     smtpPort: 587
     username: "${EMAIL_USERNAME}"
     password: "${EMAIL_PASSWORD}"
-    recipients: ["qa-team@yourcompany.com"]
+    recipients: ["qa-team@vinayakqa.com"]
   slack:
     enabled: false
     webhookUrl: "${SLACK_WEBHOOK_URL}"
